@@ -1,0 +1,13 @@
+{
+  "name": "memory-match-game",
+  "version": "1.0.0",
+  "description": "Memory Card Game with Supabase Leaderboard",
+  "scripts": {
+    "build": "node generate-config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
