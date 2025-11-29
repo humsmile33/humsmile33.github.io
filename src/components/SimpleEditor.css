@@ -1,0 +1,240 @@
+.simple-editor-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.editor-content {
+  padding: 32px 40px;
+  min-height: 500px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+}
+
+.editor-content .tiptap {
+  outline: none;
+  min-height: 450px;
+}
+
+.editor-content .tiptap > * + * {
+  margin-top: 0.75em;
+}
+
+/* Placeholder */
+.editor-content .tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+  font-style: italic;
+}
+
+/* Typography */
+.editor-content .tiptap h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a2e;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.editor-content .tiptap h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1a1a2e;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.editor-content .tiptap h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #1a1a2e;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.editor-content .tiptap p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #374151;
+}
+
+/* Lists */
+.editor-content .tiptap ul,
+.editor-content .tiptap ol {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.editor-content .tiptap li {
+  margin: 0.25rem 0;
+  line-height: 1.6;
+}
+
+.editor-content .tiptap ul li::marker {
+  color: #6366f1;
+}
+
+.editor-content .tiptap ol li::marker {
+  color: #6366f1;
+  font-weight: 600;
+}
+
+/* Task List */
+.editor-content .tiptap ul[data-type="taskList"] {
+  list-style: none;
+  padding-left: 0;
+}
+
+.editor-content .tiptap ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.editor-content .tiptap ul[data-type="taskList"] li > label {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.editor-content .tiptap ul[data-type="taskList"] li > label input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #6366f1;
+  cursor: pointer;
+}
+
+.editor-content .tiptap ul[data-type="taskList"] li > div {
+  flex: 1;
+}
+
+/* Blockquote */
+.editor-content .tiptap blockquote {
+  border-left: 4px solid #6366f1;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: #4c4f69;
+}
+
+.editor-content .tiptap blockquote p {
+  margin: 0;
+  color: inherit;
+}
+
+/* Code */
+.editor-content .tiptap code {
+  background: #f1f5f9;
+  color: #e11d48;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
+.editor-content .tiptap pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.editor-content .tiptap pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Links */
+.editor-content .tiptap a {
+  color: #6366f1;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.editor-content .tiptap a:hover {
+  color: #4f46e5;
+  border-bottom-color: #4f46e5;
+}
+
+/* Images */
+.editor-content .tiptap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Horizontal Rule */
+.editor-content .tiptap hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+  margin: 2rem 0;
+}
+
+/* Text Align */
+.editor-content .tiptap [style*="text-align: center"] {
+  text-align: center;
+}
+
+.editor-content .tiptap [style*="text-align: right"] {
+  text-align: right;
+}
+
+.editor-content .tiptap [style*="text-align: justify"] {
+  text-align: justify;
+}
+
+/* Selection */
+.editor-content .tiptap ::selection {
+  background: rgba(99, 102, 241, 0.2);
+}
+
+/* Mark styles */
+.editor-content .tiptap strong {
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.editor-content .tiptap em {
+  font-style: italic;
+}
+
+.editor-content .tiptap u {
+  text-decoration: underline;
+  text-decoration-color: #6366f1;
+  text-underline-offset: 3px;
+}
+
+.editor-content .tiptap s {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* Highlight */
+.editor-content .tiptap mark {
+  border-radius: 3px;
+  padding: 0.1em 0.2em;
+}
+
